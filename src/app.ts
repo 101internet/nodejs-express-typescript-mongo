@@ -20,12 +20,13 @@ const app = express();
 // Connect to MongoDB
 const mongoUrl = process.env.MONGOLAB_URI;
 (<any>mongoose).Promise = Promise;
-mongoose.connect(mongoUrl, {useMongoClient: true}).then(
-  () => { /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ },
-).catch(err => {
-  console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
-  // process.exit();
-});
+(async () => {
+    try {
+        await mongoose.connect(mongoUrl, {useMongoClient: true});
+    } catch (err) {
+        console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
+    }
+})();
 
 // Express configuration
 app.set("port", process.env.PORT || 80);
