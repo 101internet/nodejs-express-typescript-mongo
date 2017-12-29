@@ -4,10 +4,12 @@ app:
         - ./:/var/www
     ports:
         - 3000:80
+    links:
+        - mongo
     command: "npm run watch"
 
 mongo:
   image: mongo:3.6.0-jessie
   ports:
-    - 12002:27017
+    - 14002:27017
 

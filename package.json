@@ -41,7 +41,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@types/express-validator": "^3.0.0",
     "async": "^2.5.0",
     "bcrypt-nodejs": "^0.0.3",
     "bluebird": "^3.5.1",
@@ -64,9 +63,11 @@
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.4",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
+    "@types/express-validator": "^3.0.0",
     "@types/async": "^2.0.40",
     "@types/bcrypt-nodejs": "0.0.30",
     "@types/bluebird": "^3.5.19",
